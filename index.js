@@ -2,8 +2,11 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+var w09Route = require('./routes/assignments/w09');
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
+  .use('/w09', w09Router)
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
