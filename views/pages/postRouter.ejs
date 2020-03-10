@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Post Price</title>
+    <% include ../partials/header.ejs %>
+  </head>
+  <body>
+    <% include ../partials/nav.ejs %>
+    <h1><%= title%></h1>
+    <div>
+      <form action="../postRouter/postConfirm" method="post">
+        <p>Mail Weight:</p><input type="number" step="0.1" min="0" max="13"
+        name="mailWeight" class="input" id="mailWeight">oz.
+        <p>Mail Type:</p>
+        <select name="mailType" class="input" id="mailType"
+        onchange="changeWeightMax(this.value)">
+          <option value="">--Please choose an option--</option>
+          <option value="lStamped">Letters (Stamped)</option>
+          <option value="lMetered">Letters (Metered)</option>
+          <option value="largeEnv">Large Envelopes (Flats)</option>
+          <option value="fCPackSR">First-Class Package Service—Retail</option>
+        </select>
+        <input type="submit">
+      </form>
+    </div>
+  </body>
+  <script>
+    function changeWeightMax(value) {
+      let weightInput = document.getElementById('mailWeight');
+
+      if (value === "lStamped" || value === "lMetered") {
+        weightInput.max = 3.5;
+      } else {
+        weightInput.max = 13;
+      }
+    }
+  </script>
+</html>
