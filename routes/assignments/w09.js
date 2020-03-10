@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* Get page for postal prices, week09 Prove */
 router.get('/', function(req, res, next) {
-  res.render('pages/postRouter', { title: 'Postal Price Calculator' });
+  res.render('pages/postRouter.ejs', { title: 'Postal Price Calculator' });
 });
 
 router.post('/postConfirm', function(req, res, next) {
@@ -65,7 +65,7 @@ function calculateRate(res, mail, weight) {
 
     price = price.toFixed(2);
     mail = termMap[mail];
-    res.render('pages/postConfirm', {mailWeight: weight,
+    res.render('pages/postConfirm.ejs', {mailWeight: weight,
       mailType: mail, price: price});
     res.end();
   } catch(err) {
