@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
-var w09Route = require('./routes/assignments/w09');
+var w09Router = require('./routes/assignments/w09');
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
