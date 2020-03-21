@@ -8,8 +8,22 @@
   <body>
     <% include ../partials/header.ejs %>
     <div id="box">
-      <p><%= title %></p>
+      <h1><%= title %></h1>
       <div id="form1">
+        <p>This calculator does not use a form. Instead, it uses javascript to
+        to make Asynchronous JavaScript and XML (AJAX) request to a webendpoint using
+        the url extension "w10/add" or "w10/sub" depending on what is chosen.</br>
+      </br>The Docoument Object Model's (DOM) document.getElementById() is used to retrieve the proper values
+        (operand 1, operator, and operand 2) and insert them into the body of a POST request
+        made using JavaScript's built in fetch() function.</br>
+      </br>The response of the request is then inserted into the innerhtml below Answer.</br>
+    </br>Relevant files for this page from the github repo: </br></p>
+      <ul>
+        <li><p>Initial index file that handles the w10 route:</br><a href='https://github.com/AlexJetB/alexanderjosephbaker/blob/master/index.js'>https://github.com/AlexJetB/alexanderjosephbaker/blob/master/index.js</a></p></li>
+        <li><p>W10 route handling: </br><a href='https://github.com/AlexJetB/alexanderjosephbaker/blob/master/routes/assignments/w10.js'>https://github.com/AlexJetB/alexanderjosephbaker/blob/master/routes/assignments/w10.js</a></p></li>
+        <li><p>EJS page being used to display the file:</br><a href='https://github.com/AlexJetB/alexanderjosephbaker/blob/master/views/pages/example.ejs'>https://github.com/AlexJetB/alexanderjosephbaker/blob/master/views/pages/example.ejs</a></p></li>
+        <li><p>Public script being used to make the requests</br><a href='https://github.com/AlexJetB/alexanderjosephbaker/blob/master/public/scripts/requests.js'>https://github.com/AlexJetB/alexanderjosephbaker/blob/master/public/scripts/requests.js</a></p></li>
+      </ul>
         <input type="number" name="op1" id="op1">
         <select name="operator" id="operator">
           <option value="add">+</option>
